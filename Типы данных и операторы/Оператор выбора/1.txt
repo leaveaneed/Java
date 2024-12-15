@@ -1,0 +1,68 @@
+Целочисленные примитивы:
+
+int value = 2;
+switch (value) {
+    case 1: 
+        System.out.println("Value is 1");
+        break;
+    case 2:
+        System.out.println("Value is 2");
+        break;
+    default:
+        System.out.println("Value is something else");
+        break;
+}
+
+Перечисления (enum):
+
+enum Day { MONDAY, TUESDAY, WEDNESDAY }
+
+Day day = Day.TUESDAY;
+switch (day) {
+    case MONDAY:
+        System.out.println("It's Monday");
+        break;
+    case TUESDAY:
+        System.out.println("It's Tuesday");
+        break;
+    default:
+        System.out.println("Another day");
+}
+
+Строки (String):
+
+String command = "start";
+switch (command) {
+    case "start":
+        System.out.println("Starting...");
+        break;
+    case "stop":
+        System.out.println("Stopping...");
+        break;
+    default:
+        System.out.println("Unknown command");
+}
+
+Оболочки целочисленных типов:
+
+Integer value = 1; // автоупаковка
+switch (value) {
+    case 1:
+        System.out.println("Value is 1");
+        break;
+    case 2:
+        System.out.println("Value is 2");
+        break;
+    default:
+        System.out.println("Value is unknown");
+}
+
+Switch по выражению (Java 12+):
+
+int number = 3;
+String result = switch (number) {
+    case 1 -> "One";
+    case 2 -> "Two";
+    default -> "Other";
+};
+System.out.println(result);

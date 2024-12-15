@@ -1,0 +1,18 @@
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        System.out.println("Цикл прерывается на значении i = " + i);
+        break; // немедленный выход из цикла
+    }
+    System.out.println("i = " + i);
+}
+System.out.println("Цикл завершен");
+
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        System.out.println("Пропускаем итерацию для i = " + i);
+        continue; // переходим к следующей итерации
+    }
+    System.out.println("i = " + i);
+}
+System.out.println("Цикл завершен");
