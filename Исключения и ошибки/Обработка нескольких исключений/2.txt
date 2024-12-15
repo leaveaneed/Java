@@ -1,0 +1,15 @@
+public class FinalInCatch {
+    public static void main(String[] args) {
+        try {
+            // Пример генерации исключения
+            throw new Exception("Пример исключения");
+
+        } catch (final Exception e) {
+            System.out.println("Перехвачено исключение: " + e.getMessage());
+
+            // e = null; // Ошибка компиляции, так как e объявлена как final
+        }
+    }
+}
+
+Если переменная e в catch объявлена как final, её нельзя переназначить внутри блока catch. Это защищает от случайных изменений ссылки на объект исключения.

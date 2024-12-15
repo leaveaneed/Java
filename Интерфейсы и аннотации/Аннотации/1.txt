@@ -1,0 +1,80 @@
+@Override
+Аннотация @Override указывает, что метод переопределяет метод из суперкласса. Она помогает избежать ошибок при переопределении методов, например, если метод был неправильно написан или его сигнатура изменилась в суперклассе.
+
+Зачем нужна:
+
+Проверяет на этапе компиляции, действительно ли метод переопределяет метод из родительского класса.
+Помогает избежать ошибок из-за опечаток в имени метода или неправильной сигнатуры.
+Пример использования:
+
+  
+class Parent {
+    void display() {
+        System.out.println("Method in Parent class");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Overridden method in Child class");
+    }
+}
+Если в Child метод display будет написан с опечаткой, например dispay, компилятор выдаст ошибку из-за аннотации @Override.
+
+2. @Deprecated
+Аннотация @Deprecated указывает, что метод, класс или поле устарели и их использование нежелательно. Она также позволяет добавить комментарий, объясняющий, почему элемент устарел и какой альтернативный метод следует использовать.
+
+Зачем нужна:
+
+Предупреждает программистов о том, что использование данного элемента нежелательно.
+Помогает при рефакторинге кода, указывая на устаревшие участки.
+Пример использования:
+
+  
+class OldClass {
+    @Deprecated
+    public void oldMethod() {
+        System.out.println("This method is deprecated. Use newMethod() instead.");
+    }
+
+    public void newMethod() {
+        System.out.println("This is the new recommended method.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        OldClass obj = new OldClass();
+        obj.oldMethod(); // Компилятор выдаст предупреждение
+    }
+}
+Компилятор при вызове oldMethod выдаст предупреждение о том, что метод устарел.
+
+3. @SuppressWarnings
+Аннотация @SuppressWarnings используется для подавления предупреждений компилятора. Она позволяет указать, какие конкретно предупреждения нужно игнорировать.
+
+Зачем нужна:
+
+Позволяет скрыть ненужные предупреждения компилятора в определенном блоке кода.
+Применяется, когда разработчик уверен, что предупреждение можно игнорировать.
+Пример использования:
+
+  
+import java.util.ArrayList;
+
+public class Test {
+    @SuppressWarnings("unchecked")
+    public void addElements() {
+        ArrayList list = new ArrayList();
+        list.add("Element 1");
+        list.add("Element 2");
+        System.out.println("List: " + list);
+    }
+
+    public static void main(String[] args) {
+        Test test = new Test();
+        test.addElements();
+    }
+}
+В этом примере используется "unchecked" для подавления предупреждений, связанных с необработанными типами при использовании generics.
