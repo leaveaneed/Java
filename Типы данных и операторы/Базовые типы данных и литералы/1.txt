@@ -1,0 +1,4 @@
+int studentsInClass = 25; // 25 студентов в классе
+double outsideTemperature = 21.3; // 21.3°C
+char gradeA = 'A'; // Оценка "A"
+boolean isCharacterUpgraded = true; // Персонаж прокачан
